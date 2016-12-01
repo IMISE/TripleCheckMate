@@ -5,3 +5,6 @@
 data/*
 target/*
 .settings/*
+*.mv.db
+*.trace.db
+*~
