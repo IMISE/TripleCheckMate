@@ -12,12 +12,12 @@
         <g:VerticalPanel spacing="4">
             <g:HTMLPanel>
                 <h2>What is it about?</h2>
-                <p>Welcome to the DBpedia Evaluation Campaign. This campaign aims at
-                    evaluating DBpedia resources in order to assess and thereby improve
-                    the quality of DBpedia.
+                <p>Welcome to the SNIK Evaluation Campaign. This campaign aims at
+                    evaluating SNIK resources in order to assess and thereby improve
+                    the quality of SNIK.
                 </p>
                 <h2>How does it work?</h2>
-                <p>First, please authenticate yourself with a google account. This
+                <p>First, please authenticate yourself with a Google account. This
                     will not only help prevent spam but also help us keep track of how
                     many resources you evaluated. After you click “Start”, you will be
                     provided with a list of classes from DBpedia wherein you may choose
@@ -56,8 +56,7 @@
                 </p>
                 <h2>What do you get?</h2>
                 <p>In order to thank you for your contributions, a lucky winner will
-                    win either a Samsung Galaxy Tab 2 or an Amazon voucher worth 300
-                    EU!
+                    win *to be determined*!
                     So, go ahead, start evaluating now!
                 </p>
             </g:HTMLPanel>

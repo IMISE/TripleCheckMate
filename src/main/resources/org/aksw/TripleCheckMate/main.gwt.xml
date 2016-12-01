@@ -27,6 +27,7 @@
     <servlet class="org.aksw.TripleCheckMate.server.requests.UserRequestImpl" path="/UserRequest"/>
 
     <servlet class="org.aksw.TripleCheckMate.server.requests.EvaluationRequestImpl" path="/EvaluationRequest"/>
-
+	
+	<add-linker name="xsiframe" /> <!-- for super dev mode -->
 
 </module>
