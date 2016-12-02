@@ -8,4 +8,3 @@ target/*
 *.mv.db
 *.trace.db
 *~
-/target/
