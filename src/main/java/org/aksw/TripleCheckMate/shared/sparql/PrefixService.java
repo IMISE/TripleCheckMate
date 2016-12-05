@@ -46,7 +46,12 @@ public class PrefixService {
     private static void setupPrefixes() {
 
         String tmpPrefixes[][] = {
-                {"dbpedia", "http://dbpedia.org/resource/"},
+                {"meta", "http://www.snik.eu/ontology/meta/"},
+                {"bb", "http://www.snik.eu/ontology/bb/"},
+                {"ob", "http://www.snik.eu/ontology/ob/"},
+                {"ciox", "http://www.snik.eu/ontology/ciox/"},
+                {"schema", "http://schema.org/"},
+           		{"dbpedia", "http://dbpedia.org/resource/"},
                 {"dbp-prop", "http://dbpedia.org/property/"},
                 {"dbp-owl", "http://dbpedia.org/ontology/"},
                 {"rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#"},
@@ -67,7 +72,7 @@ public class PrefixService {
                 {"gr", "http://purl.org/goodrelations/v1#"},
                 {"xsd", "http://www.w3.org/2001/XMLSchema#"},
                 {"admin", "http://webns.net/mvcb/"},
-                {"dcterms", "http://purl.org/dc/terms/"},
+                {"dct", "http://purl.org/dc/terms/"},
                 {"swrc", "http://swrc.ontoware.org/ontology#"},
                 {"commerce", "http://search.yahoo.com/searchmonkey/commerce/"},
                 {"dbpprop", "http://dbpedia.org/property/"},

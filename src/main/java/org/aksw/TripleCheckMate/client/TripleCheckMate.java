@@ -49,7 +49,7 @@ public class TripleCheckMate implements EntryPoint {
 
         VerticalPanel evalTabPanel = new VerticalPanel();
 
-        SessionContext.tabPanel.add(SessionContext.pageStart, "DBpedia Evaluation Campaign");
+        SessionContext.tabPanel.add(SessionContext.pageStart, "SNIK Evaluation Campaign");
         SessionContext.tabPanel.add(SessionContext.pageEval, "Evaluate");
         SessionContext.tabPanel.addStyleName("main-tab");
         SessionContext.tabPanel.selectTab(0);

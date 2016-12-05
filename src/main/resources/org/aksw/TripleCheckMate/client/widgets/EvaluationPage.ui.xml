@@ -14,7 +14,7 @@
         <g:HorizontalPanel spacing="4" width="100%">
             <g:VerticalPanel>
                 <g:HTML ui:field="htmlAbout">
-                    <h2>About: http://dbpedia.org/resource/XYZ</h2>
+                    <h2>About: XYZ</h2>
                 </g:HTML>
                 <g:VerticalPanel spacing="4" addStyleNames="{style.more-padding}">
                     <g:HorizontalPanel spacing="4">

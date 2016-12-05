@@ -20,12 +20,12 @@
                 <p>First, please authenticate yourself with a Google account. This
                     will not only help prevent spam but also help us keep track of how
                     many resources you evaluated. After you click “Start”, you will be
-                    provided with a list of classes from DBpedia wherein you may choose
+                    provided with a list of classes from SNIK wherein you may choose
                     the ones you are most familiar with. There are three options: (1)
                     Any: where a completely random resource will be retrieved, (2)
                     Class: where you have the option to choose any class from the
-                    DBpedia ontology and a random resource belonging to that class will
-                    be retrieved, (3) Manual: where you can manually put in the DBpedia
+                    SNIK ontology and a random resource belonging to that class will
+                    be retrieved, (3) Manual: where you can manually put in the SNIK
                     URI of a resource of your choice.
                 </p>
                 <p>After selecting a resource, you will be shown each triple
@@ -51,7 +51,7 @@
                 <p>The more the resources you evaluate, the more errors will be
                     detected. These errors will then be recorded and analyzed by our
                     team. Based on whether the error is fixable or not, we will amend
-                    DBpedia to ensure that the next versions do not have the same types
+                    SNIK to ensure that the next versions do not have the same types
                     of errors.
                 </p>
                 <h2>What do you get?</h2>
@@ -71,20 +71,21 @@
             <g:HTML>
                 <h2>Help</h2>
                 <p>
-                    Here is a short screen cast explaining how you can use this tool
+                    Here is a short screen cast explaining how you can use this tool from the DBpedia evaluation campaign.
                 </p>
                 <p>
                     <iframe width="560" height="315"
                             src="http://www.youtube.com/embed/l-StthTvjFI" frameborder="0"
                             allowfullscreen=""></iframe>
                 </p>
+                <!-- 
                 <p>
                     You can also visit our dedicated Google Group:
                     <a href="https://groups.google.com/d/forum/dbpedia-data-quality">
                         https://groups.google.com/d/forum/dbpedia-data-quality
                     </a>
                     .
-                </p>
+                </p> -->
             </g:HTML>
 
 
