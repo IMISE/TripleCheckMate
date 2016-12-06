@@ -85,13 +85,8 @@ public class Endpoint implements Serializable {
     }
 
     public String getQueryforRandomResource() {
-
-        int offset = Random.nextInt(760129);
-        String from = "";
-        for (String g : graphs)
-            from += " FROM <" + g + "> ";
-        return " SELECT ?s " + from +
-                " WHERE { ?s foaf:isPrimaryTopicOf ?o } LIMIT 1 OFFSET " + offset;
+    	// not perfect but the best I found on short notice, feel free to replace with something better
+    	return "select ?s {?s a owl:Class. FILTER ( 1 >  <bif:rnd> (500, ?s) )} limit 1";
     }
 
     public String getQueryforRandomClassResource(String classURI, long maxRand) {

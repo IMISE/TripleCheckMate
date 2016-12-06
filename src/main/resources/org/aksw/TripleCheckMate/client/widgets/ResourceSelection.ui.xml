@@ -27,7 +27,6 @@
             <g:header>Advanced Options</g:header>
 
             <g:HorizontalPanel>
-
                 <g:VerticalPanel addStyleNames="{style.radio-panel}">
                     <g:RadioButton ui:field="rdAny" name="selection">Any</g:RadioButton>
                     <g:RadioButton ui:field="rdClass" name="selection">Class</g:RadioButton>
@@ -35,20 +34,16 @@
                 </g:VerticalPanel>
                 <g:VerticalPanel addStyleNames="{style.options-panel}">
                     <g:VerticalPanel ui:field="pnlSelAny">
-                        <g:HTML>A completly random resource will be fetched that, may not
-                            belong to a Class
-                        </g:HTML>
+                        <g:HTML>A random SNIK class will be fetched.</g:HTML>
                     </g:VerticalPanel>
                     <g:VerticalPanel ui:field="pnlSelClass">
-                        <g:HTML>A random resource will be fetched that belongs to the
-                            selected class
-                        </g:HTML>
+                        <g:HTML>Please select the class you want to evaluate.</g:HTML>
                         <g:ScrollPanel width="400px" height="350px">
                             <g:Tree ui:field="treeClass"></g:Tree>
                         </g:ScrollPanel>
                     </g:VerticalPanel>
                     <g:VerticalPanel ui:field="pnlSelManual">
-                        <g:HTML>Please write the resource you want to evaluate manually</g:HTML>
+                        <g:HTML>Please write the class URI you want to evaluate manually.</g:HTML>
                         <c:SparqlSuggestBox ui:field="txtManual" width="300px"></c:SparqlSuggestBox>
                     </g:VerticalPanel>
                 </g:VerticalPanel>
