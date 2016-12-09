@@ -137,7 +137,9 @@ public class ResourceSelection extends Composite {
         ClassItem item = new ClassItem("owl:Thing",
                 "http://www.w3.org/2002/07/owl#Thing",
                 "http://www.w3.org/2002/07/owl#Thing");
-        item.count = 2161560;
+        item.count = 2100;
+     // first 9 decimal digits of the MD5 hash without leading zeroes and non-decimal characters of owl:Thing, primary key for owl:Thing in the database when filled with the SPARQL query
+        item.ID=587265410;        
         TreeItem ti = new TreeItem();
         ti.setText(item.name);
         // Temporarily add an item so we can expand this node
@@ -150,20 +152,23 @@ public class ResourceSelection extends Composite {
 
             public void onOpen(OpenEvent<TreeItem> event) {
                 final TreeItem treeItem = event.getTarget();
-                if (treeItem.getChildCount() == 1
-                        && treeItem.getChild(0).getText().equals("")) {
+                if (treeItem.getChildCount() == 1 && treeItem.getChild(0).getText().equals(""))
+                {
                     // Close the item immediately
                     treeItem.setState(false, false);
 
                     SessionContext.showPopup();
                     // Set up the callback object.
-                    AsyncCallback<List<ClassItem>> classCallback = new AsyncCallback<List<ClassItem>>() {
-                        public void onFailure(Throwable caught) {
+                    AsyncCallback<List<ClassItem>> classCallback = new AsyncCallback<List<ClassItem>>()
+                    {
+                        public void onFailure(Throwable caught)
+                        {
                             Window.alert(caught.getMessage());
                             SessionContext.hidePopup();
                         }
 
-                        public void onSuccess(List<ClassItem> items) {
+                        public void onSuccess(List<ClassItem> items)
+                        {
                             treeItem.getChild(0).remove();
                             for (ClassItem i : items) {
                                 TreeItem child = treeItem.addTextItem(i.name);
@@ -176,8 +181,7 @@ public class ResourceSelection extends Composite {
                         }
                     };
                     long classID = ((ClassItem) treeItem.getUserObject()).ID;
-                    SessionContext.evaluationReqSrv.getClassChildren(classID,
-                            classCallback);
+                    SessionContext.evaluationReqSrv.getClassChildren(classID, classCallback);
 
                 }
             }
@@ -199,66 +203,70 @@ public class ResourceSelection extends Composite {
         SessionContext.showPopup();
 
         if (rdAny.getValue() == true) {
-            String query = SessionContext.endpoint
-                    .getQueryforRandomResource();
+            String query = SessionContext.endpoint.getQueryforRandomResource();
             fetchRandomResource(query, "Any");
         }
 
-        if (rdClass.getValue() == true) {
+        if (rdClass.getValue() == true)
+        {
 
             if (treeClass.getSelectedItem() == null) {
                 Window.alert("No Class selected");
 
                 SessionContext.hidePopup();
                 return;
-            }
+            }            
 
             final ClassItem selectedClass = (ClassItem) treeClass.getSelectedItem().getUserObject();
-            if (selectedClass.count != 0) {
-                String query = SessionContext.endpoint
-                        .getQueryforRandomClassResource(selectedClass.uri, selectedClass.count);
-                fetchRandomResource(query, selectedClass.uri);
-            } else {
-                // Get the class count first
-                try {
-                    String query = SessionContext.endpoint.getQueryforClassCount(selectedClass.uri);
-                    String queryURL = SessionContext.endpoint.generateQueryURL(query);
-
-                    RequestBuilder rb = new RequestBuilder(RequestBuilder.GET, queryURL);
-                    rb.setCallback(new RequestCallback() {
-
-                        public void onResponseReceived(Request request,
-                                                       Response response) {
-                            try {
-                                JsonSparqlResult result = new JsonSparqlResult(response
-                                        .getText());
-
-                                String classCount = result.getFirstResult();
-                                selectedClass.count = Long.parseLong(classCount);
-                                String query = SessionContext.endpoint
-                                        .getQueryforRandomClassResource(selectedClass.uri, selectedClass.count);
-                                fetchRandomResource(query, selectedClass.uri);
-                                saveClassCount(selectedClass.ID, selectedClass.count);
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                                Window.alert("Error communicating with SPARQL Endpoint!");
-                                SessionContext.hidePopup();
-                            }
-                        }
-
-                        public void onError(Request request, Throwable exception) {
-                            Window.alert("ERROR");
-                            SessionContext.hidePopup();
-                        }
-                    });
-                    rb.send();
-                } catch (RequestException e) {
-                    Window.alert("Error occurred" + e.getMessage());
-
-                    SessionContext.hidePopup();
-                }
-
-            }
+                        
+            // In the original code, a random instance of the class is fetched. In SNIK, we only have classes so we use the selected class directly.
+            fetchResource(selectedClass.uri, selectedClass.name);
+            
+//            if (selectedClass.count != 0)
+//            {
+//                String query = SessionContext.endpoint
+//                        .getQueryforRandomClassResource(selectedClass.uri, selectedClass.count);
+//                fetchRandomResource(query, selectedClass.uri);
+//            } else {
+//                // Get the class count first
+//                try {
+//                    String query = SessionContext.endpoint.getQueryforClassCount(selectedClass.uri);
+//                    String queryURL = SessionContext.endpoint.generateQueryURL(query);
+//
+//                    RequestBuilder rb = new RequestBuilder(RequestBuilder.GET, queryURL);
+//                    rb.setCallback(new RequestCallback() {
+//
+//                        public void onResponseReceived(Request request,
+//                                                       Response response) {
+//                            try {
+//                                JsonSparqlResult result = new JsonSparqlResult(response
+//                                        .getText());
+//
+//                                String classCount = result.getFirstResult();
+//                                selectedClass.count = Long.parseLong(classCount);
+//                                String query = SessionContext.endpoint
+//                                        .getQueryforRandomClassResource(selectedClass.uri, selectedClass.count);
+//                                fetchRandomResource(query, selectedClass.uri);
+//                                saveClassCount(selectedClass.ID, selectedClass.count);
+//                            } catch (Exception e) {
+//                                e.printStackTrace();
+//                                Window.alert("Error communicating with SPARQL Endpoint!");
+//                                SessionContext.hidePopup();
+//                            }
+//                        }
+//
+//                        public void onError(Request request, Throwable exception) {
+//                            Window.alert("ERROR");
+//                            SessionContext.hidePopup();
+//                        }
+//                    });
+//                    rb.send();
+//                } catch (RequestException e) {
+//                    Window.alert("Error occurred" + e.getMessage());
+//
+//                    SessionContext.hidePopup();
+//                }
+//            }
         }
 
         if (rdManual.getValue() == true) {

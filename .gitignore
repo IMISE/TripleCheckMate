@@ -8,4 +8,8 @@ target/*
 *.mv.db
 *.trace.db
 *~
+<<<<<<< HEAD
 /target/
+=======
+storage.properties
+>>>>>>> 5a8bb986a11850514087d99e0a6e44d0c73d21da

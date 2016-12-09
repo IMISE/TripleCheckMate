@@ -6,9 +6,16 @@
 # dbuser=root
 # dbpass=
 
-# H2 database
-# driver=org.h2.Driver
-# database=jdbc:h2:
-# databasePath=db/evaluation
-# dbuser=sa
+ # MariaDB DataBase
+# driver=org.mariadb.jdbc.Driver
+# database=jdbc:mariadb:
+# databasePath=//localhost:3306/evaluation
+# dbuser=root
 # dbpass=
+
+# H2 database
+ #driver=org.h2.Driver
+ #database=jdbc:h2:
+ #databasePath=jdbc:h2:/home/konrad/projekte/javaee/triplecheckmate/src/main/webapp/db/evaluation
+ #dbuser=sa
+ #dbpass=

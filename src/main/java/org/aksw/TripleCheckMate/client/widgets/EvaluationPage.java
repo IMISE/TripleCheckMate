@@ -144,7 +144,8 @@ public class EvaluationPage extends Composite {
 
     private void setAboutText(String aboutURI) {
         htmlAbout.setHTML("<h2>About: <a href=\""
-                + aboutURI.replace("http://dbpedia.org/", "http://live.dbpedia.org/")
+        		+aboutURI
+                //+ aboutURI.replace("http://dbpedia.org/", "http://live.dbpedia.org/")
                 + "\" target=\"_blank\">"
                 + aboutURI
                 + "</a> <a href=\""

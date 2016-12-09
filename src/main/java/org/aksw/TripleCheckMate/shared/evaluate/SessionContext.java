@@ -44,9 +44,9 @@ public class SessionContext {
     // TODO get it with RPC
     public static Endpoint endpoint = new Endpoint(
             0,
-            "http://live.dbpedia.org/sparql",
-            "http://dbpedia.org",
-            "live.dbpedia.org/sparql");
+            "http://www.snik.eu/sparql",
+            "http://www.snik.eu/ontology",
+            "http://www.snik.eu/sparql");
 
     // Async RPC Requests
     public static EvaluationRequestAsync evaluationReqSrv = GWT

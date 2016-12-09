@@ -581,8 +581,8 @@ public class JDBCStorageService extends StorageService {
         return retVal;
     }
 
-    public List<ClassItem> getClassChildren(long classID)
-            throws StorageServiceException {
+    public List<ClassItem> getClassChildren(long classID) throws StorageServiceException
+    {
         Connection conn = null;
         PreparedStatement st = null;
         ResultSet rs = null;
