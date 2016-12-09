@@ -16,6 +16,6 @@
 # H2 database
  #driver=org.h2.Driver
  #database=jdbc:h2:
- #databasePath=jdbc:h2:/home/konrad/projekte/javaee/triplecheckmate/src/main/webapp/db/evaluation
+ #databasePath=jdbc:h2:./db/evaluation
  #dbuser=sa
  #dbpass=
